@@ -26,7 +26,7 @@ namespace CreditBet_S2_Software.Models
         public string ProfilePicturePath { get; set; }
 
         [Display(Name = "Credits")]
-        public int CreditAmount { get; set; }
+        public int Credits { get; set; }
 
         [Display(Name = "Role")]
         public EmployeeRole Role { get; set; }
