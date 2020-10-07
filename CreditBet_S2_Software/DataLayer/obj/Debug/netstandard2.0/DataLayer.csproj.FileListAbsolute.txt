@@ -1,0 +1,5 @@
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\DataLayer\bin\Debug\netstandard2.0\DataLayer.deps.json
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\DataLayer\bin\Debug\netstandard2.0\DataLayer.dll
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\DataLayer\obj\Debug\netstandard2.0\DataLayer.csprojAssemblyReference.cache
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\DataLayer\obj\Debug\netstandard2.0\DataLayer.AssemblyInfoInputs.cache
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\DataLayer\obj\Debug\netstandard2.0\DataLayer.AssemblyInfo.cs

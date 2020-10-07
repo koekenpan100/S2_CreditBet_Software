@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HA8QPRyguaDwvlNbW2Sst7mn9bjIG/KanRsAXArMAgjKsM+BtYF7fVvOcBCiP0Jk2PTOxRKt5IbgdIDfxWXnDQ==",
+  "success": true,
+  "projectFilePath": "D:\\Git\\Personal\\S2_CreditBet_Software\\CreditBet_S2_Software\\CreditBet_S2_Software\\CreditBet_S2_Software.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Randy\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
+    "C:\\Users\\Randy\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
