@@ -11,7 +11,7 @@ namespace DataLayer.DataAccess
     {
         public static string GetConnectionString()
         {
-            return "";
+            return "server=localhost;database=CreditBet_DB;username=root";
         }
 
         public static List<T> LoadData<T>(string sql)

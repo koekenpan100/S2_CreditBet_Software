@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4h106LVEgVdtmhLMmzm23qz9bDfFlXQl1oUP2zgcZ7+PlIsouvn9WTUcWFuWhhkCPVJHuYhQnH75Q3l1WgX15Q==",
+  "success": true,
+  "projectFilePath": "D:\\Git\\Personal\\S2_CreditBet_Software\\CreditBet_S2_Software\\LogicLayer\\LogicLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Randy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Randy\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
