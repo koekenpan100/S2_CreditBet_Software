@@ -34,7 +34,5 @@ namespace CreditBet_S2_Software.Controllers
             }
             return RedirectToAction("Index", "User");
         }
-
-
     }
 }

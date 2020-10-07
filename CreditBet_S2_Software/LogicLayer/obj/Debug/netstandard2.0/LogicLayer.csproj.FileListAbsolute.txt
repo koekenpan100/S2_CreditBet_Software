@@ -1,0 +1,9 @@
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\bin\Debug\netstandard2.0\LogicLayer.deps.json
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\bin\Debug\netstandard2.0\LogicLayer.dll
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\bin\Debug\netstandard2.0\LogicLayer.pdb
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.csprojAssemblyReference.cache
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.AssemblyInfoInputs.cache
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.AssemblyInfo.cs
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.csproj.CoreCompileInputs.cache
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.dll
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.pdb
