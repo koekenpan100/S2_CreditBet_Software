@@ -22,9 +22,12 @@ namespace CreditBet_S2_Software.Controllers
         {
             if (ModelState.IsValid)
             {
+                string salt = PassWordHashing.GenerateSalt();
+                string PasswordHash = PassWordHashing.GeneratePasswordHash(user.Password, salt);
                 UserProcessor.CreateUser(
                     user.Email,
-                    user.Password,
+                    salt,
+                    PasswordHash,
                     user.Name,
                     user.PostalCode,
                     user.Address,
