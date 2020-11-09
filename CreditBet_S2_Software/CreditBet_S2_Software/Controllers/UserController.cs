@@ -9,14 +9,16 @@ namespace CreditBet_S2_Software.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult RegisterUser()
+
+        [HttpGet]
+        public IActionResult CreateUser()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult RegisterUser(UserModel user)
+        public IActionResult CreateUser(UserModel user)
         {
             if (ModelState.IsValid)
             {
@@ -28,11 +30,12 @@ namespace CreditBet_S2_Software.Controllers
                     user.Address,
                     user.Description,
                     user.ProfilePicturePath,
-                    user.Credits,
+                    user.Credits = 100,
                     user.Role.ToString()
                     );
+                return RedirectToAction("Index" , "Home");
             }
-            return RedirectToAction("Index", "User");
+            return View();
         }
     }
 }

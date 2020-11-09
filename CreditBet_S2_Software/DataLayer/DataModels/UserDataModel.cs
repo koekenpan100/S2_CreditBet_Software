@@ -17,6 +17,6 @@ namespace DataLayer.DataModels
         public string Description { get; set; }
         public string ProfilePicturePath { get; set; }
         public int Credits { get; set; }
-        public string Role { get; set; }
+        public string UserRole { get; set; }
     }
 }

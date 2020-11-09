@@ -39,7 +39,7 @@ namespace CreditBet_S2_Software.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Enter a description to be displayed on your profile")]
-        [Display(Name = "Name")]
+        [Display(Name = "Description")]
         [StringLength(200, MinimumLength = 2, ErrorMessage = "Description must be at least 2 characters")]
         public string Description { get; set; }
 
@@ -55,5 +55,9 @@ namespace CreditBet_S2_Software.Models
         [Required(ErrorMessage = "Enter an address")]
         [Display(Name = "Address")]
         public string Address { get; set; }
+
+        [Required(ErrorMessage ="Enter User Role")]
+        [Display(Name = "Role")]
+        public UserRole Role { get; set; }
     }
 }

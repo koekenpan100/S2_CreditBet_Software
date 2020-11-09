@@ -29,10 +29,10 @@ namespace CreditBet_S2_Software.Models
         public int Credits { get; set; }
 
         [Display(Name = "Role")]
-        public EmployeeRole Role { get; set; }
+        public UserRole Role { get; set; }
     }
 
-    public enum EmployeeRole
+    public enum UserRole
     {
         [Display(Name = "User")]
         User,

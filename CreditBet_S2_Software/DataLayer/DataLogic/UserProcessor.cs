@@ -8,7 +8,7 @@ namespace DataLayer.DataLogic
 {
     public class UserProcessor
     {
-        public static void CreateUser(string email, string password, string name, string postalcode , string address , string description , string profilepicturepath , int credits , string role)
+        public static void CreateUser(string email, string password, string name, string postalcode , string address , string description , string profilepicturepath , int credits , string userrole)
         {
             UserDataModel data = new UserDataModel
             {
@@ -20,10 +20,10 @@ namespace DataLayer.DataLogic
                 Description = description,
                 ProfilePicturePath = profilepicturepath,
                 Credits = credits,
-                Role = role
+                UserRole = userrole
             };
-            string sql = @"INSERT INTO employee (email, password, name, postalcode, address, description, profilepicturepath, credits, role)
-                            VALUES(@Email, @Password, @Name, @PostalCode, @Address, @Description, @ProfilePicturePath, @Credits,@Role);";
+            string sql = @"INSERT INTO user (email, password, name, postalcode, address, description, profilepicturepath, credits, userrole)
+                            VALUES(@Email, @Password, @Name, @PostalCode, @Address, @Description, @ProfilePicturePath, @Credits, @UserRole);";
             DatabaseAccess.SaveData(sql, data);
         }
     }
