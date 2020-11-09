@@ -129,3 +129,4 @@ D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Softwar
 D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\bin\Debug\netcoreapp3.1\DataLayer.pdb
 D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\bin\Debug\netcoreapp3.1\LogicLayer.pdb
 D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\obj\Debug\netcoreapp3.1\Razor\Views\Games\Coinflip.cshtml.g.cs
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\obj\Debug\netcoreapp3.1\Razor\Views\User\LoginUser.cshtml.g.cs

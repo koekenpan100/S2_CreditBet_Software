@@ -28,5 +28,11 @@ namespace DataLayer.DataLogic
                             VALUES(@Email, @Salt, @PasswordHash, @Name, @PostalCode, @Address, @Description, @ProfilePicturePath, @Credits, @UserRole);";
             DatabaseAccess.SaveData(sql, data);
         }
+
+        public static UserDataModel GetUserFromEmail(string email)
+        {
+            string sql = $"SELECT * FROM user WHERE email = '{email}';";
+            return DatabaseAccess.LoadFirstData<UserDataModel>(sql);
+        }
     }
 }
