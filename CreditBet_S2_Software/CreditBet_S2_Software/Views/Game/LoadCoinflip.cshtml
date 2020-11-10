@@ -1,0 +1,32 @@
+﻿@model CreditBet_S2_Software.Models.ViewGameModel
+
+<body>
+    <form asp-action="LoadGame">
+        <p>
+            @Html.DisplayFor(Model => Model.Name)
+        </p>
+        <p>
+            @Html.DisplayFor(Model => Model.Description)
+        </p>
+        <div class="Game">
+            <p>
+                <img src="~/Images/Heads.png" id="CoinImg" />
+            </p>
+            <button type="button" onclick="flip()" id="Coin">START</button>
+            <script>
+                function flip() {
+                    var x = Math.floor(Math.random() * 2);
+                    console.log(x);
+                    if (x == 0) {
+                        document.getElementById("Coin").innerHTML = "Heads";
+                        document.getElementById("CoinImg").src = "../Images/Heads.png";
+                    } else {
+                        document.getElementById("Coin").innerHTML = "Tails";
+                        document.getElementById("CoinImg").src = "../Images/Tails.png";
+                    }
+                }
+                flip();
+            </script>
+        </div>
+    </form>
+</body>

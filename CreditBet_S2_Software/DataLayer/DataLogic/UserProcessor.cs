@@ -34,5 +34,11 @@ namespace DataLayer.DataLogic
             string sql = $"SELECT * FROM user WHERE email = '{email}';";
             return DatabaseAccess.LoadFirstData<UserDataModel>(sql);
         }
+
+        public static UserDataModel GetUserFromId(int id)
+        {
+            string sql = $"SELECT * FROM user WHERE id = '{id}';";
+            return DatabaseAccess.LoadFirstData<UserDataModel>(sql);
+        }
     }
 }

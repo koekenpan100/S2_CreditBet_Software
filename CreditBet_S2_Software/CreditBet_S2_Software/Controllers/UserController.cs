@@ -61,12 +61,12 @@ namespace CreditBet_S2_Software.Controllers
                 {
                     if (PassWordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
                     {
-                        return RedirectToAction("Dashboard", "Home");
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("incorrectLogin", "E-mail and password do not match.");
+                    ModelState.AddModelError("loginError", "E-mail and password do not match.");
                 }
             }
             return View();
