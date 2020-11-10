@@ -19,7 +19,6 @@ namespace CreditBet_S2_Software.Controllers
             return View();
         }
 
-        //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult CreateUser(UserModel user)
@@ -45,26 +44,31 @@ namespace CreditBet_S2_Software.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult LoginUser()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult LoginUser(LoginUserModel login)
         {
             if (ModelState.IsValid)
             {
-                UserDataModel employeeData = UserProcessor.GetUserFromEmail(login.Email);
-                if (employeeData != null)
+                UserDataModel userData = UserProcessor.GetUserFromEmail(login.Email);
+                if (userData != null)
                 {
-                    if (PassWordHashing.ValidateUser(login.Password, employeeData.Salt, employeeData.PasswordHash))
+                    if (PassWordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
                     {
                         return RedirectToAction("Dashboard", "Home");
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("incorrectLogin", "The provided email and password do not match.");
+                    ModelState.AddModelError("incorrectLogin", "E-mail and password do not match.");
                 }
             }
-
             return View();
         }
     }
