@@ -6,9 +6,9 @@
     <h1 class="display-4">Welcome to creditbet!</h1>
     <p>Choose one of the games below to get started!</p>
     <p>
-        <a href="">
-            <img src="~/Images/CoinGameIcon.png" class="rounded-circle" height="40" width="40" asp-append-version="true"/>
-            <text>COINFLIP</text>
+        <a asp-controller="Game" asp-action="LoadCoinflip">
+            <img src="~/Images/CoinGameIcon.png" class="rounded-circle" height="40" width="40" asp-append-version="true" />
         </a>
+        <text>COINFLIP</text>
     </p>
 </div>
