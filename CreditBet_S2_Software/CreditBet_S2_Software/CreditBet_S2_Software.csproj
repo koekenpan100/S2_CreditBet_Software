@@ -14,4 +14,8 @@
     <ProjectReference Include="..\LogicLayer\LogicLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shop\" />
+  </ItemGroup>
+
 </Project>
