@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CreditBet_S2_Software.Models
 {
-    public class ItemCreateModel
+    public class ItemModel
     {
         public int Id { get; set; }
     

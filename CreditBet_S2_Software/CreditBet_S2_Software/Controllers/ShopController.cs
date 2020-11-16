@@ -24,7 +24,7 @@ namespace CreditBet_S2_Software.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateItem(ItemCreateModel item)
+        public IActionResult CreateItem(ItemModel item)
         {
             if (ModelState.IsValid)
             {
@@ -37,6 +37,24 @@ namespace CreditBet_S2_Software.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult ViewItems()
+        {
+            var data = processor.LoadItems();
+            List<ItemModel> employees = new List<ItemModel>();
+            foreach (var row in data)
+            {
+                employees.Add(new ItemModel
+                {
+                    Name = row.Name,
+                    Description = row.Description,
+                    Price = row.Price,
+                    Category = row.Category
+                });
+            }
+            return View(employees);
         }
     }
 }

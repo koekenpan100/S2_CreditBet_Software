@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CreditBet_S2_Software.Models.ItemModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "ViewItems";
+}
+
+
+<div class="content bg_white_block">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Shop items</h1>
+        </div>
+        <div class="col-md-3 offset-3">
+            <p>
+                <a asp-action="CreateItem" class="btn btn-lg btn-primary btn-block">Create new item</a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+
+        <table class="table table-striped">
+            <thead class="thead-ligh">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
