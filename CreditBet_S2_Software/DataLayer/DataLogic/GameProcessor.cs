@@ -8,10 +8,12 @@ namespace DataLayer.DataLogic
 {
     public class GameProcessor
     {
-        public static GameDataModel LoadGameById(int id)
+        DatabaseAccess access = new DatabaseAccess();
+
+        public GameDataModel LoadGameById(int id)
         {
             string sql = $"SELECT * FROM game WHERE id = '{id}';";
-            return DatabaseAccess.LoadFirstData<GameDataModel>(sql);
+            return access.LoadFirstData<GameDataModel>(sql);
         }
     }
 }

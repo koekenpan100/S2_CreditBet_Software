@@ -8,7 +8,9 @@ namespace DataLayer.DataLogic
 {
     public class ItemProcessor
     {
-        public static void CreateItem(string name, string description, decimal price, string category)
+        DatabaseAccess access = new DatabaseAccess();
+
+        public void CreateItem(string name, string description, int price, string category)
         {
             ItemDataModel data = new ItemDataModel
             {
@@ -17,21 +19,21 @@ namespace DataLayer.DataLogic
                 Price = price,
                 Category = category
             };
-            string sql = @"INSERT INTO user (name, description, price, category)
+            string sql = @"INSERT INTO item (name, description, price, category)
                             VALUES(@Name, @Description, @Price, @Category);";
-            DatabaseAccess.SaveData(sql , data);
+            access.SaveData(sql, data);
         }
 
-        public static List<ItemDataModel> LoadItems()
+        public List<ItemDataModel> LoadItems()
         {
             string sql = "SELECT * FROM item";
-            return DatabaseAccess.LoadData<ItemDataModel>(sql);
+            return access.LoadData<ItemDataModel>(sql);
         }
         
-        public static void DeleteItem(int id)
+        public void DeleteItem(int id)
         {
             string sql = $"DELETE FROM item WHERE id = '{id}';";
-            DatabaseAccess.DeleteData(sql);
+            access.DeleteData(sql);
         }
     }
 }

@@ -11,10 +11,12 @@ namespace CreditBet_S2_Software.Controllers
 {
     public class GameController : Controller
     {
+        GameProcessor processor = new GameProcessor();
+
         [HttpGet]
         public IActionResult LoadCoinflip()
         {
-            GameDataModel gameData = GameProcessor.LoadGameById(1);
+            GameDataModel gameData = processor.LoadGameById(1);
             ViewGameModel game = new ViewGameModel
             {
                 Name = gameData.Name,

@@ -9,12 +9,12 @@ namespace DataLayer.DataAccess
 {
     public class DatabaseAccess
     {
-        public static string GetConnectionString()
+        public string GetConnectionString()
         {
             return "server=localhost;database=CreditBet_DB;username=root";
         }
 
-        public static List<T> LoadData<T>(string sql)
+        public List<T> LoadData<T>(string sql)
         {
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
@@ -22,22 +22,17 @@ namespace DataLayer.DataAccess
             }
         }
 
-        public static T LoadFirstData<T>(string sql)
+        public T LoadFirstData<T>(string sql)
         {
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
-                try
                 {
                     return con.Query<T>(sql).FirstOrDefault();
-                }
-                catch (InvalidCastException e)
-                {
-                    return default;
                 }
             }
         }
 
-        public static void SaveData<T>(string sql, T data)
+        public void SaveData<T>(string sql, T data)
         {
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
@@ -45,7 +40,7 @@ namespace DataLayer.DataAccess
             }
         }
 
-        public static void DeleteData(string sql)
+        public void DeleteData(string sql)
         {
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {

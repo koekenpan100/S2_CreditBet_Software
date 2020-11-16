@@ -59,5 +59,7 @@ namespace CreditBet_S2_Software.Models
         [Required(ErrorMessage ="Enter User Role")]
         [Display(Name = "Role")]
         public UserRole Role { get; set; }
+
+        public int Credits { get; set; }
     }
 }

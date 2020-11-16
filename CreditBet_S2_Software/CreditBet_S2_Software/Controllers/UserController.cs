@@ -12,6 +12,7 @@ namespace CreditBet_S2_Software.Controllers
 {
     public class UserController : Controller
     {
+        UserProcessor processor = new UserProcessor();
 
         [HttpGet]
         public IActionResult CreateUser()
@@ -21,18 +22,18 @@ namespace CreditBet_S2_Software.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateUser(UserModel user)
+        public IActionResult CreateUser(UserCreateModel user)
         {
             if (ModelState.IsValid)
             {
                 string salt = PassWordHashing.GenerateSalt();
                 string PasswordHash = PassWordHashing.GeneratePasswordHash(user.Password, salt);
-                UserProcessor.CreateUser(
+                processor.CreateUser(
                     user.Email,
                     salt,
                     PasswordHash,
                     user.Name,
-                    user.PostalCode,
+                    user.Postalcode,
                     user.Address,
                     user.Description,
                     user.ProfilePicturePath,
@@ -56,7 +57,7 @@ namespace CreditBet_S2_Software.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserDataModel userData = UserProcessor.GetUserFromEmail(login.Email);
+                UserDataModel userData = processor.GetUserFromEmail(login.Email);
                 if (userData != null)
                 {
                     if (PassWordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
