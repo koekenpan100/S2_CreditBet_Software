@@ -1,10 +1,23 @@
-﻿@model IEnumerable<CreditBet_S2_Software.Models.ItemModel>
+﻿@model IEnumerable<CreditBet_S2_Software.Models.ViewItemModel>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "ViewItems";
 }
 
+<script>
+    function DeleteItem(id) {
+        $('#deletebutton').click(function () {
+            $.ajax({
+        type: "POST",
+                url: '@Url.Action("DeleteItem")',
+                data: JSON.stringify({ id: Id }), //use id here
+        dataType: "json",
+                contentType: "application/json; charset=utf-8",
+            });
+    });
+    }
+</script>
 
 <div class="content bg_white_block">
     <div class="row">
@@ -43,18 +56,21 @@
                 @foreach (var item in Model)
                 {
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Price)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Category)
-                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        <input id="deletebutton" type="submit" name="DeleteItem" value="Delete" /> 
+                    </td>
                 </tr>
                 }
             </tbody>

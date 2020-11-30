@@ -34,7 +34,7 @@ namespace CreditBet_S2_Software.Controllers
                     item.Price,
                     item.Category
                     );
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ViewItems", "Shop");
             }
             return View();
         }
@@ -43,10 +43,10 @@ namespace CreditBet_S2_Software.Controllers
         public IActionResult ViewItems()
         {
             var data = processor.LoadItems();
-            List<ItemModel> employees = new List<ItemModel>();
+            List<ViewItemModel> items = new List<ViewItemModel>();
             foreach (var row in data)
             {
-                employees.Add(new ItemModel
+                items.Add(new ViewItemModel
                 {
                     Name = row.Name,
                     Description = row.Description,
@@ -54,7 +54,14 @@ namespace CreditBet_S2_Software.Controllers
                     Category = row.Category
                 });
             }
-            return View(employees);
+            return View(items);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteItem(int id)
+        {
+            processor.DeleteItem(id);
+            return RedirectToAction("ViewItems");
         }
     }
 }
