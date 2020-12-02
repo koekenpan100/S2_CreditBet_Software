@@ -50,11 +50,15 @@ namespace CreditBet_S2_Software.Controllers
         [HttpGet]
         public IActionResult LoginUser()
         {
+            if (@User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
         [HttpPost]
-        public IActionResult LoginUser(LoginUserModel login)
+        public async Task<IActionResult> LoginUser(LoginUserModel login)
         {
             if (ModelState.IsValid)
             {
@@ -64,13 +68,13 @@ namespace CreditBet_S2_Software.Controllers
                     if (PassWordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
                     {
                         var userIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-                        userIdentity.AddClaim(new Claim(ClaimTypes.Name, userData.Email));
-                        userIdentity.AddClaim(new Claim(ClaimTypes.GivenName, userData.Name));
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Name, userData.Name));
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Email, userData.Email));
                         userIdentity.AddClaim(new Claim(ClaimTypes.Role, userData.UserRole));
 
                         var userPrincipal = new ClaimsPrincipal(userIdentity);
 
-                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal);
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal);
 
                         return RedirectToAction("Index", "Home");
                     }
@@ -81,6 +85,16 @@ namespace CreditBet_S2_Software.Controllers
                 }
             }
             return View();
+        }
+
+        [Authorize]
+        public IActionResult LogoutUser()
+        {
+            if (@User.Identity.IsAuthenticated)
+            {
+                HttpContext.SignOutAsync();
+            }
+            return RedirectToAction("LoginUser", "User");
         }
     }
 }
