@@ -50,7 +50,7 @@ namespace CreditBet_S2_Software
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=User}/{action=LoginUser}/{id?}");
             });
         }
     }

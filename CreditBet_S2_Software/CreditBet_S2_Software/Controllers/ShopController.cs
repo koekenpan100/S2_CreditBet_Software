@@ -48,6 +48,7 @@ namespace CreditBet_S2_Software.Controllers
             {
                 items.Add(new ViewItemModel
                 {
+                    Id = row.ID,
                     Name = row.Name,
                     Description = row.Description,
                     Price = row.Price,
@@ -58,9 +59,9 @@ namespace CreditBet_S2_Software.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteItem(int id)
+        public IActionResult DeleteItem(int Id)
         {
-            processor.DeleteItem(id);
+            processor.DeleteItem(Id);
             return RedirectToAction("ViewItems");
         }
     }

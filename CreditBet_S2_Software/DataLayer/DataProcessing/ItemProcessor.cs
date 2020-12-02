@@ -29,11 +29,11 @@ namespace DataLayer.DataLogic
             string sql = "SELECT * FROM item";
             return access.LoadData<ItemDataModel>(sql);
         }
-        
+
         public void DeleteItem(int id)
         {
             var parameters = new { Id = id };
-            string sql = @"DELETE FROM item WHERE id = Id;";
+            string sql = @"DELETE FROM item WHERE ID = Id;";
             access.DeleteData(sql);
         }
     }

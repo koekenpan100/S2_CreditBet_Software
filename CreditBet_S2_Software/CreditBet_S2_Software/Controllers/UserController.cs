@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataLayer.DataLogic;
 using CreditBet_S2_Software.Models;
 using LogicLayer;
 using DataLayer.DataModels;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 
 namespace CreditBet_S2_Software.Controllers
 {
@@ -52,7 +54,6 @@ namespace CreditBet_S2_Software.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult LoginUser(LoginUserModel login)
         {
             if (ModelState.IsValid)
@@ -62,6 +63,15 @@ namespace CreditBet_S2_Software.Controllers
                 {
                     if (PassWordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
                     {
+                        var userIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Name, userData.Email));
+                        userIdentity.AddClaim(new Claim(ClaimTypes.GivenName, userData.Name));
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Role, userData.UserRole));
+
+                        var userPrincipal = new ClaimsPrincipal(userIdentity);
+
+                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal);
+
                         return RedirectToAction("Index", "Home");
                     }
                 }

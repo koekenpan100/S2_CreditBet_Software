@@ -132,3 +132,4 @@ D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Softwar
 D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\obj\Debug\netcoreapp3.1\Razor\Views\Game\LoadCoinflip.cshtml.g.cs
 D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\obj\Debug\netcoreapp3.1\Razor\Views\Shop\CreateItem.cshtml.g.cs
 D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\obj\Debug\netcoreapp3.1\Razor\Views\Shop\ViewItems.cshtml.g.cs
+D:\Git\Personal\S2_CreditBet_Software\CreditBet_S2_Software\CreditBet_S2_Software\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_UserInfoPartialView.cshtml.g.cs
