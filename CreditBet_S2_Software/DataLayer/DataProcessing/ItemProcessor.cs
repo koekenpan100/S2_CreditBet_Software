@@ -33,8 +33,8 @@ namespace DataLayer.DataLogic
         public void DeleteItem(int id)
         {
             var parameters = new { Id = id };
-            string sql = @"DELETE FROM item WHERE ID = Id;";
-            access.DeleteData(sql);
+            string sql = @"DELETE FROM item WHERE ID = @Id;";
+            access.DeleteData(sql , parameters);
         }
     }
 }

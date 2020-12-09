@@ -40,11 +40,11 @@ namespace DataLayer.DataAccess
             }
         }
 
-        public void DeleteData(string sql)
+        public void DeleteData<T>(string sql , T data)
         {
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
-                con.Execute(sql);
+                con.Execute(sql, data);
             }
         }
     }
